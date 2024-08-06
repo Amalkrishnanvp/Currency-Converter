@@ -38,13 +38,19 @@
                 <div>
                     <p class="mb-3">From</p>
                     <div class="flex border border-black rounded-sm py-1 px-2">
-                        <label for="op-1">
+                        <label for="USD" class="block first">
                             <img src="public/images/usa.png" class="w-5">
                         </label>
-                        <select class="text-sm outline-none">
-                            <option id="op1">USD</option>
-                            <option>INR</option>
-                            <option>By</option>
+                        <label for="INR" class="hidden first">
+                            <img src="public/images/india.png" class="w-5">
+                        </label>
+                        <label for="EUR" class="hidden first">
+                            <img src="public/images/europe.png" class="w-5">
+                        </label>
+                        <select class="text-sm outline-none left-container" id="currency-selector">
+                            <option class="set-1" id="op1">USD</option>
+                            <option class="set-1" id="op2">INR</option>
+                            <option class="set-1" id="op3">EUR</option>
                         </select>
                     </div>
                 </div>
@@ -52,13 +58,19 @@
                 <div>
                     <p class="mb-3">To</p>
                     <div class="flex border border-black py-1 px-2 rounded-sm">
-                        <label for="op-A">
+                        <label for="USD" class="hidden second">
+                            <img src="public/images/usa.png" class="w-5">
+                        </label>
+                        <label for="INR" class="block second">
                             <img src="public/images/india.png" class="w-5">
                         </label>
-                        <select class="text-sm outline-none">
-                            <option>INR</option>
-                            <option>Hello</option>
-                            <option>By</option>
+                        <label for="EUR" class="hidden second">
+                            <img src="public/images/europe.png" class="w-5">
+                        </label>
+                        <select class="text-sm outline-none right-container">
+                            <option class="set-2">INR</option>
+                            <option class="set-2">USD</option>
+                            <option class="set-2">EUR</option>
                         </select>
                     </div>
                 </div>
