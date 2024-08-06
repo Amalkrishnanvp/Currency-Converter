@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
+
+    <!-- CSS styles -->
     <link rel="stylesheet" href="public/stylesheets/style.css">
 
     <!-- Google Fonts  -->
@@ -13,43 +15,63 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <!-- Font Awesome CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-    <div>
-        <h2>Curency Converter</h2>
-    </div>
-    <div>
-        <label>Enter Amount</label> <br>
-        <input type="text">
-    </div>
-    <div>
-        <p>From</p>
-        <div>
+<body class="bg-blue-600">
+    <div class="flex justify-center mt-20">
+        <div class="w-fit bg-white rounded-md p-6">
             <div>
-                <div class="flag-icon">icon1</div>
-                <div>
-                    <select>
-                        <option>Hi</option>
-                        <option>Hello</option>
-                        <option>By</option>
-                    </select>
+                <h2 class="text-2xl font-bold text-center mb-10">Currency Converter</h2>
+            </div>
+            <div>
+                <h3>Enter Amount</h3>
+                <div class="w-full mb-4">
+                    <input type="text" class="border border-black outline-none pl-2 mt-2 w-72 h-9 rounded-sm">
                 </div>
             </div>
-            <div>Arrow</div>
-            <div>
-                <div class="flag-icon">icon2</div>
-                <select>
-                    <option>Hi</option>
-                    <option>Hello</option>
-                    <option>By</option>
-                </select>
+            <div class="flex justify-between">
+                <div>
+                    <p class="mb-3">From</p>
+                    <div class="flex border border-black rounded-sm py-1 px-2">
+                        <label for="op-1">
+                            <img src="public/images/usa.png" class="w-5">
+                        </label>
+                        <select class="text-sm outline-none">
+                            <option id="op1">USD</option>
+                            <option>INR</option>
+                            <option>By</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-row items-end mb-2"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+                <div>
+                    <p class="mb-3">To</p>
+                    <div class="flex border border-black py-1 px-2 rounded-sm">
+                        <label for="op-A">
+                            <img src="public/images/india.png" class="w-5">
+                        </label>
+                        <select class="text-sm outline-none">
+                            <option>INR</option>
+                            <option>Hello</option>
+                            <option>By</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="border border-gray-600 rounded-md mt-7 p-2 h-10"></div>
+            <div class="mt-5 text-center">
+                <button class="w-full bg-blue-600 rounded-sm text-white h-10 hover:bg-blue-700">Convert</button>
             </div>
         </div>
     </div>
-    <div>
-        <button>Convert</button>
-    </div>
+
+    <!-- Website Scripts -->
+    <script src="public/javascripts/script.js"></script>
 </body>
 
 </html>
