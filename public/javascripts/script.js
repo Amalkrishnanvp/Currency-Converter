@@ -7,14 +7,43 @@ const convertBtn = document.querySelector(".convert-btn");
 const amount = document.querySelector(".amount");
 const resultDisplay = document.querySelector(".result-display");
 
+// to get converted currency
+async function getCurrency(amountInput, fromCurrencyInput, toCurrencyInput) {
+  // values
+  const values = {
+    amount: amountInput,
+    fromCurrency: fromCurrencyInput,
+    toCurrency: toCurrencyInput,
+  };
+  try {
+    // API request to server
+    const response = await fetch("/convert", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: JSON.stringify(values),
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    } else {
+      const data = await response.json();
+      console.log(data);
+    }
+  } catch (error) {
+    console.error("Error converting currency:", error);
+    throw error;
+  }
+}
+
 // convert button
 convertBtn.addEventListener("click", () => {
   const amountInput = amount.value;
-  console.log(amountInput);
   const fromCurrencyInput = leftContainer.value;
-  console.log(fromCurrencyInput);
   const toCurrencyInput = rightContainer.value;
-  console.log(toCurrencyInput);
+
+  getCurrency(amountInput, fromCurrencyInput, toCurrencyInput);
 });
 
 document.addEventListener("DOMContentLoaded", () => {

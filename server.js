@@ -27,8 +27,23 @@ const server = http.createServer((req, res) => {
         res.end();
       }
     });
-  } else if (req.method === "GET" && pathName === "/convert") {
-    console.log("requst success");
+  } else if (req.method === "POST" && pathName === "/convert") {
+    let data = "";
+    // collecting data on req object
+    req.on("data", (chunk) => {
+      data += chunk.toString();
+    });
+
+    req.on("end", () => {
+      // parsing data in JSON string to javascript object
+      const parsedData = JSON.parse(data);
+
+      // destructuring parseddata object into different variables
+      const { amount, fromCurrency, toCurrency } = parsedData;
+      console.log(amount);
+      console.log(fromCurrency);
+      console.log(toCurrency);
+    });
   } else if (
     req.method === "GET" &&
     pathName === "/public/stylesheets/style.css"
