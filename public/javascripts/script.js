@@ -1,10 +1,21 @@
 const leftContainer = document.querySelector(".left-container");
 const rightContainer = document.querySelector(".right-container");
 let valueContainer;
-const setOne = document.querySelectorAll(".set-1");
 const first = document.querySelectorAll(".first");
-const setTwo = document.querySelectorAll(".set-2");
 const second = document.querySelectorAll(".second");
+const convertBtn = document.querySelector(".convert-btn");
+const amount = document.querySelector(".amount");
+const resultDisplay = document.querySelector(".result-display");
+
+// convert button
+convertBtn.addEventListener("click", () => {
+  const amountInput = amount.value;
+  console.log(amountInput);
+  const fromCurrencyInput = leftContainer.value;
+  console.log(fromCurrencyInput);
+  const toCurrencyInput = rightContainer.value;
+  console.log(toCurrencyInput);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   leftContainer.addEventListener("change", (event) => {
