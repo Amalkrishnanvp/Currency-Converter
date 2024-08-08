@@ -29,7 +29,7 @@ async function getCurrency(amountInput, fromCurrencyInput, toCurrencyInput) {
       throw new Error("Network response was not ok");
     } else {
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       displayCurrency(data, amountInput, fromCurrencyInput, toCurrencyInput);
     }
   } catch (error) {
@@ -42,11 +42,11 @@ async function getCurrency(amountInput, fromCurrencyInput, toCurrencyInput) {
 function displayCurrency(data, amountInput) {
   const currentFromOption = leftContainer.querySelector("option:checked");
   const fromCurrencyText = currentFromOption.text;
-  console.log(fromCurrencyText);
+  // console.log(fromCurrencyText);
 
   const currentToOption = rightContainer.querySelector("option:checked");
   const toCurrencyText = currentToOption.text;
-  console.log(toCurrencyText);
+  // console.log(toCurrencyText);
 
   resultDisplay.innerText = `${amountInput} ${fromCurrencyText} = ${data} ${toCurrencyText}`;
 }
@@ -55,10 +55,10 @@ function displayCurrency(data, amountInput) {
 convertBtn.addEventListener("click", () => {
   const amountInput = amount.value;
   const fromCurrencyInput = leftContainer.value;
-  console.log(fromCurrencyInput);
+  // console.log(fromCurrencyInput);
 
   const toCurrencyInput = rightContainer.value;
-  console.log(toCurrencyInput);
+  // console.log(toCurrencyInput);
 
   getCurrency(amountInput, fromCurrencyInput, toCurrencyInput);
 });

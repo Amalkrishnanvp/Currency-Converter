@@ -7,6 +7,7 @@ const CC = require("currency-converter-lt");
 // creating a server
 const server = http.createServer((req, res) => {
   const pathName = url.parse(req.url).pathname;
+  // console.log(pathName);
 
   // storing paths in variables for easy accessing
   const stylePath = path.join("public", "stylesheets", "style.css");
@@ -39,9 +40,9 @@ const server = http.createServer((req, res) => {
 
       // destructuring parseddata object into different variables
       const { amount, fromCurrency, toCurrency } = parsedData;
-      console.log(amount);
-      console.log(fromCurrency);
-      console.log(toCurrency);
+      // console.log(amount);
+      // console.log(fromCurrency);
+      // console.log(toCurrency);
 
       let currencyConverter = new CC({
         from: fromCurrency,
@@ -50,7 +51,7 @@ const server = http.createServer((req, res) => {
       });
 
       currencyConverter.convert().then((data) => {
-        console.log(data);
+        // console.log(data);
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(data.toString());
       });
@@ -123,6 +124,135 @@ const server = http.createServer((req, res) => {
     pathName === "/public/images/australia.png"
   ) {
     fs.readFile(path.join(imagesPath, "australia.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (
+    req.method === "GET" &&
+    pathName === "/public/images/united-kingdom.png"
+  ) {
+    fs.readFile(path.join(imagesPath, "united-kingdom.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (req.method === "GET" && pathName === "/public/images/canada.png") {
+    fs.readFile(path.join(imagesPath, "canada.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (
+    req.method === "GET" &&
+    pathName === "/public/images/switzerland.png"
+  ) {
+    fs.readFile(path.join(imagesPath, "switzerland.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (req.method === "GET" && pathName === "/public/images/china.png") {
+    fs.readFile(path.join(imagesPath, "china.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (req.method === "GET" && pathName === "/public/images/brazil.png") {
+    fs.readFile(path.join(imagesPath, "brazil.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (req.method === "GET" && pathName === "/public/images/russia.png") {
+    fs.readFile(path.join(imagesPath, "russia.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (
+    req.method === "GET" &&
+    pathName === "/public/images/south-africa.png"
+  ) {
+    fs.readFile(path.join(imagesPath, "south-africa.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (req.method === "GET" && pathName === "/public/images/mexico.png") {
+    fs.readFile(path.join(imagesPath, "mexico.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (req.method === "GET" && pathName === "/public/images/turkey.png") {
+    fs.readFile(path.join(imagesPath, "turkey.png"), (err, data) => {
+      if (err) {
+        res.writeHead(500, { "Content-Type": "text/plain" });
+        res.write("Error found", err);
+        res.end();
+      } else {
+        res.writeHead(200, { "Content-Type": "image/png" });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else if (req.method === "GET" && pathName === "/public/images/korea.png") {
+    fs.readFile(path.join(imagesPath, "korea.png"), (err, data) => {
       if (err) {
         res.writeHead(500, { "Content-Type": "text/plain" });
         res.write("Error found", err);
