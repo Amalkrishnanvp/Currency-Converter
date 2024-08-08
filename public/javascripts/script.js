@@ -30,7 +30,7 @@ async function getCurrency(amountInput, fromCurrencyInput, toCurrencyInput) {
     } else {
       const data = await response.json();
       console.log(data);
-      displayCurrency(data);
+      displayCurrency(data, amountInput, fromCurrencyInput, toCurrencyInput);
     }
   } catch (error) {
     console.error("Error converting currency:", error);
@@ -39,15 +39,26 @@ async function getCurrency(amountInput, fromCurrencyInput, toCurrencyInput) {
 }
 
 // to display currency data
-function displayCurrency(data) {
-  resultDisplay.innerText = data;
+function displayCurrency(data, amountInput) {
+  const currentFromOption = leftContainer.querySelector("option:checked");
+  const fromCurrencyText = currentFromOption.text;
+  console.log(fromCurrencyText);
+
+  const currentToOption = rightContainer.querySelector("option:checked");
+  const toCurrencyText = currentToOption.text;
+  console.log(toCurrencyText);
+
+  resultDisplay.innerText = `${amountInput} ${fromCurrencyText} = ${data} ${toCurrencyText}`;
 }
 
 // convert button
 convertBtn.addEventListener("click", () => {
   const amountInput = amount.value;
   const fromCurrencyInput = leftContainer.value;
+  console.log(fromCurrencyInput);
+
   const toCurrencyInput = rightContainer.value;
+  console.log(toCurrencyInput);
 
   getCurrency(amountInput, fromCurrencyInput, toCurrencyInput);
 });

@@ -23,76 +23,159 @@
 </head>
 
 <body class="bg-blue-600">
-    <div class="flex justify-center mt-20">
-        <div class="w-fit bg-white rounded-md p-6">
+    <div class="flex justify-center mt-10 sm:mt-20 px-7">
+        <div class="bg-white rounded-md p-6 w-96 sm:w-auto sm:max-w-xl">
             <div>
                 <h2 class="text-2xl font-bold text-center mb-10">Currency Converter</h2>
             </div>
             <div>
                 <h3>Enter Amount</h3>
                 <div class="w-full mb-4">
-                    <input type="number" class="border border-black outline-none pl-2 mt-2 w-72 h-9 rounded-sm amount">
+                    <input type="number"
+                        class="border border-black outline-none pl-2 mt-2 w-full h-10 rounded-sm amount">
                 </div>
             </div>
-            <div class="flex justify-between">
+            <div class="flex sm:flex-row flex-col justify-between">
                 <div>
                     <p class="mb-3">From</p>
-                    <div class="flex border border-black rounded-sm py-1 px-2">
-                        <label for="USD" class="block first">
+                    <div class="flex border border-black rounded-sm py-1 px-2 items-center">
+                        <label for="USD" class="block first shrink-0">
                             <img src="public/images/usa.png" class="w-5">
                         </label>
-                        <label for="INR" class="hidden first">
+                        <label for="INR" class="hidden first shrink-0">
                             <img src="public/images/india.png" class="w-5">
                         </label>
-                        <label for="EUR" class="hidden first">
+                        <label for="EUR" class="hidden first shrink-0">
                             <img src="public/images/europe.png" class="w-5">
                         </label>
-                        <label for="JPY" class="hidden first">
+                        <label for="JPY" class="hidden first shrink-0">
                             <img src="public/images/japan.png" class="w-5">
-                        </label> <label for="AUD" class="hidden first">
+                        </label> <label for="AUD" class="hidden first shrink-0">
                             <img src="public/images/australia.png" class="w-5">
                         </label>
-                        <select class="text-sm outline-none left-container" id="currency-selector">
-                            <option class="set-1">US Dollar (USD)</option>
-                            <option class="set-1">Indian Rupee (INR)</option>
-                            <option class="set-1">Euro (EUR)</option>
-                            <option class="set-1">Japanese Yen (JPY)</option>
-                            <option class="set-1">Australian Dollar (AUD)</option>
+                        </label> <label for="GBP" class="hidden first shrink-0">
+                            <img src="public/images/united-kingdom.png" class="w-5">
+                        </label>
+                        <label for="CAD" class="hidden first shrink-0">
+                            <img src="public/images/canada.png" class="w-5">
+                        </label>
+                        <label for="CHF" class="hidden first shrink-0">
+                            <img src="public/images/switzerland.png" class="w-5">
+                        </label>
+                        <label for="CNY" class="hidden first shrink-0">
+                            <img src="public/images/china.png" class="w-5">
+                        </label>
+                        <label for="BRL" class="hidden first shrink-0">
+                            <img src="public/images/brazil.png" class="w-5">
+                        </label>
+                        <label for="RUB" class="hidden first shrink-0">
+                            <img src="public/images/russia.png" class="w-5">
+                        </label>
+                        <label for="ZAR" class="hidden first shrink-0">
+                            <img src="public/images/south-africa.png" class="w-5">
+                        </label>
+                        <label for="MXN" class="hidden first shrink-0">
+                            <img src="public/images/mexico.png" class="w-5">
+                        </label>
+                        <label for="TRY" class="hidden first shrink-0">
+                            <img src="public/images/turkey.png" class="w-5">
+                        </label>
+                        <label for="KRW" class="hidden first shrink-0">
+                            <img src="public/images/korea.png" class="w-5">
+                        </label>
+                        <select class="text-sm outline-none left-container h-8">
+                            <option value="USD" class="set-1">United States Dollar</option>
+                            <option value="INR" class="set-1">Indian Rupee</option>
+                            <option value="EUR" class="set-1">Euro</option>
+                            <option value="JPY" class="set-1">Japanese Yen</option>
+                            <option value="AUD" class="set-1">Australian Dollar</option>
+                            <option value="GBP" class="set-1">British Pound</option>
+                            <option value="CAD" class="set-1">Canadian Dollar</option>
+                            <option value="CHF" class="set-1">Swiss Franc</option>
+                            <option value="CNY" class="set-1">Yuan</option>
+                            <option value="BRL" class="set-1">Brazilian Real</option>
+                            <option value="RUB" class="set-1">Russian Ruble</option>
+                            <option value="ZAR" class="set-1">South African Rand</option>
+                            <option value="MXN" class="set-1">Mexican Peso</option>
+                            <option value="TRY" class="set-1">Turkish Lira</option>
+                            <option value="KRW" class="set-1">South Korean Won</option>
                         </select>
                     </div>
                 </div>
-                <div class="flex flex-row items-end mb-2"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+                <div class="flex flex-row justify-center sm:items-end mb-4 mt-6 sm:mt-0 px-8"><i
+                        class="fa-solid fa-arrow-right-arrow-left rotate-90 sm:rotate-0 transition-transform"></i></div>
                 <div>
                     <p class="mb-3">To</p>
-                    <div class="flex border border-black py-1 px-2 rounded-sm">
-                        <label for="USD" class="hidden second">
+                    <div class="flex border border-black py-1 px-2 rounded-sm items-center">
+                        <label for="USD" class="hidden second shrink-0">
                             <img src="public/images/usa.png" class="w-5">
                         </label>
-                        <label for="INR" class="block second">
+                        <label for="INR" class="block second shrink-0">
                             <img src="public/images/india.png" class="w-5">
                         </label>
-                        <label for="EUR" class="hidden second">
+                        <label for="EUR" class="hidden second shrink-0">
                             <img src="public/images/europe.png" class="w-5">
                         </label>
-                        <label for="JPY" class="hidden second">
+                        <label for="JPY" class="hidden second shrink-0">
                             <img src="public/images/japan.png" class="w-5">
-                        </label> <label for="AUD" class="hidden second">
+                        </label>
+                        <label for="AUD" class="hidden second shrink-0">
                             <img src="public/images/australia.png" class="w-5">
                         </label>
-                        <select class="text-sm outline-none right-container">
-                            <option class="set-2">Indian Rupee (INR)</option>
-                            <option class="set-2">US Dollar (USD)</option>
-                            <option class="set-2">Euro (EUR)</option>
-                            <option class="set-2">Japanese Yen (JPY)</option>
-                            <option class="set-2">Australian Dollar (AUD)</option>
+                        </label> <label for="GBP" class="hidden second shrink-0">
+                            <img src="public/images/united-kingdom.png" class="w-5">
+                        </label>
+                        <label for="CAD" class="hidden second shrink-0">
+                            <img src="public/images/canada.png" class="w-5">
+                        </label>
+                        <label for="CHF" class="hidden second shrink-0">
+                            <img src="public/images/switzerland.png" class="w-5">
+                        </label>
+                        <label for="CNY" class="hidden second shrink-0">
+                            <img src="public/images/china.png" class="w-5">
+                        </label>
+                        <label for="BRL" class="hidden second shrink-0">
+                            <img src="public/images/brazil.png" class="w-5">
+                        </label>
+                        <label for="RUB" class="hidden second shrink-0">
+                            <img src="public/images/russia.png" class="w-5">
+                        </label>
+                        <label for="ZAR" class="hidden second shrink-0">
+                            <img src="public/images/south-africa.png" class="w-5">
+                        </label>
+                        <label for="MXN" class="hidden second shrink-0">
+                            <img src="public/images/mexico.png" class="w-5">
+                        </label>
+                        <label for="TRY" class="hidden second shrink-0">
+                            <img src="public/images/turkey.png" class="w-5">
+                        </label>
+                        <label for="KRW" class="hidden second shrink-0">
+                            <img src="public/images/korea.png" class="w-5">
+                        </label>
+                        <select class="text-sm outline-none right-container h-8 ml-1">
+                            <option value="USD" class="set-2">United States Dollar</option>
+                            <option value="INR" class="set-2" selected>Indian Rupee</option>
+                            <option value="EUR" class="set-2">Euro</option>
+                            <option value="JPY" class="set-2">Japanese Yen</option>
+                            <option value="AUD" class="set-2">Australian Dollar</option>
+                            <option value="GBP" class="set-2">British Pound</option>
+                            <option value="CAD" class="set-2">Canadian Dollar</option>
+                            <option value="CHF" class="set-2">Swiss Franc</option>
+                            <option value="CNY" class="set-2">Yuan</option>
+                            <option value="BRL" class="set-2">Brazilian Real</option>
+                            <option value="RUB" class="set-2">Russian Ruble</option>
+                            <option value="ZAR" class="set-2">South African Rand</option>
+                            <option value="MXN" class="set-2">Mexican Peso</option>
+                            <option value="TRY" class="set-2">Turkish Lira</option>
+                            <option value="KRW" class="set-2">South Korean Won</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <div class="border border-gray-600 rounded-md mt-7 p-2 h-10 result-display"></div>
+            <div class="border border-gray-600 rounded-md mt-7 p-2 h-11 result-display"></div>
             <div class="mt-5 text-center">
                 <button
-                    class="w-full bg-blue-600 rounded-sm text-white h-10 hover:bg-blue-700 convert-btn">Convert</button>
+                    class="w-full bg-blue-600 rounded-sm text-white h-14 sm:h-12 hover:bg-blue-700 convert-btn">Convert</button>
             </div>
         </div>
     </div>
