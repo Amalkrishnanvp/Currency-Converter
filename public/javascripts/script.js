@@ -9,7 +9,7 @@ const resultDisplay = document.querySelector(".result-display");
 
 // to get converted currency
 async function getCurrency(amountInput, fromCurrencyInput, toCurrencyInput) {
-  // values
+  // create object with values
   const values = {
     amount: amountInput,
     fromCurrency: fromCurrencyInput,
@@ -20,7 +20,7 @@ async function getCurrency(amountInput, fromCurrencyInput, toCurrencyInput) {
     const response = await fetch("/convert", {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(values),
     });
@@ -30,11 +30,17 @@ async function getCurrency(amountInput, fromCurrencyInput, toCurrencyInput) {
     } else {
       const data = await response.json();
       console.log(data);
+      displayCurrency(data);
     }
   } catch (error) {
     console.error("Error converting currency:", error);
     throw error;
   }
+}
+
+// to display currency data
+function displayCurrency(data) {
+  resultDisplay.innerText = data;
 }
 
 // convert button

@@ -2,12 +2,11 @@ const http = require("http");
 const url = require("url");
 const fs = require("fs");
 const path = require("path");
-const convertCurrency = require("nodejs-currency-converter");
+const CC = require("currency-converter-lt");
 
 // creating a server
 const server = http.createServer((req, res) => {
   const pathName = url.parse(req.url).pathname;
-  console.log(pathName);
 
   // storing paths in variables for easy accessing
   const stylePath = path.join("public", "stylesheets", "style.css");
@@ -34,7 +33,7 @@ const server = http.createServer((req, res) => {
       data += chunk.toString();
     });
 
-    req.on("end", () => {
+    req.on("end", async () => {
       // parsing data in JSON string to javascript object
       const parsedData = JSON.parse(data);
 
@@ -43,6 +42,18 @@ const server = http.createServer((req, res) => {
       console.log(amount);
       console.log(fromCurrency);
       console.log(toCurrency);
+
+      let currencyConverter = new CC({
+        from: fromCurrency,
+        to: toCurrency,
+        amount: parseInt(amount),
+      });
+
+      currencyConverter.convert().then((data) => {
+        console.log(data);
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(data.toString());
+      });
     });
   } else if (
     req.method === "GET" &&
